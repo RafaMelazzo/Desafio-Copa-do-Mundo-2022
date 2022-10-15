@@ -54,8 +54,8 @@ namespace API_Copa_do_Mundo_2022.Controllers
             }
 
             partidaClubeDb.PartidaId = partidaClube.PartidaId;
-            partidaClubeDb.ClubeIdA = partidaClube.ClubeIdA;
-            partidaClubeDb.ClubeIdB = partidaClube.ClubeIdB;
+            partidaClubeDb.ClubeA = partidaClube.ClubeA;
+            partidaClubeDb.ClubeB = partidaClube.ClubeB;
 
             db.PartidasClubes.Update(partidaClubeDb);
             db.SaveChanges();

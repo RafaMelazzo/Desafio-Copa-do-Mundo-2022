@@ -17,16 +17,16 @@ namespace API_Copa_do_Mundo_2022.Models
         public int PartidaId { get; set; }
         public Partida Partida { get; set; }
 
-        [Required]
-        [Column(name: "clubes_id_a")]
         [ForeignKey("Clube")]
-        public int ClubeIdA { get; set; }
-        public virtual Clube ClubeA { get; set; }
+        [NotMapped]
+        public virtual int ClubeIdA { get; set; }
+        [Required]
+        public Clube ClubeA { get; set; }
 
-        [Required]
-        [Column(name: "clubes_id_b")]
         [ForeignKey("Clube")]
-        public int ClubeIdB { get; set; }
-        public virtual Clube ClubeB { get; set; }
+        [NotMapped]
+        public virtual int ClubeIdB { get; set; }
+        [Required]
+        public Clube ClubeB { get; set; }
     }
 }

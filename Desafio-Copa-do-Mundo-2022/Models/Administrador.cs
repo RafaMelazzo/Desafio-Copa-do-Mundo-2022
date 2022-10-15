@@ -17,6 +17,7 @@ namespace API_Copa_do_Mundo_2022.Models
         public string Nome { get; set; }
 
         [Required]
+        [DataType(DataType.EmailAddress)]
         [Column(name: "email")]
         [MaxLength(80)]
         public string Email { get; set; }

@@ -210,19 +210,11 @@ namespace API_Copa_do_Mundo_2022.Migrations
 
             modelBuilder.Entity("API_Copa_do_Mundo_2022.Models.PartidaClube", b =>
                 {
-                    b.Property<int?>("ClubeAId")
+                    b.Property<int>("ClubeAId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ClubeBId")
+                    b.Property<int>("ClubeBId")
                         .HasColumnType("int");
-
-                    b.Property<int>("ClubeIdA")
-                        .HasColumnType("int")
-                        .HasColumnName("clubes_id_a");
-
-                    b.Property<int>("ClubeIdB")
-                        .HasColumnType("int")
-                        .HasColumnName("clubes_id_b");
 
                     b.Property<int>("PartidaId")
                         .HasColumnType("int")
@@ -283,11 +275,15 @@ namespace API_Copa_do_Mundo_2022.Migrations
                 {
                     b.HasOne("API_Copa_do_Mundo_2022.Models.Clube", "ClubeA")
                         .WithMany()
-                        .HasForeignKey("ClubeAId");
+                        .HasForeignKey("ClubeAId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("API_Copa_do_Mundo_2022.Models.Clube", "ClubeB")
                         .WithMany()
-                        .HasForeignKey("ClubeBId");
+                        .HasForeignKey("ClubeBId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("API_Copa_do_Mundo_2022.Models.Partida", "Partida")
                         .WithMany()
