@@ -54,6 +54,7 @@ namespace API_Copa_do_Mundo_2022.Controllers
             }
 
             partidaDb.FasesId = partida.FasesId;
+            partidaDb.DataHora = partida.DataHora;
             partidaDb.Iniciado = partida.Iniciado;
             partidaDb.Finalizado = partida.Finalizado;
 
