@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_Copa_do_Mundo_2022.Models // teste
+namespace API_Copa_do_Mundo_2022.Models
 {
     [Table("clubes")]
     public class Clube
