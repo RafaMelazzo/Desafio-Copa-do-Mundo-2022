@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-Copa-do-Mundo-2022", "Desafio-Copa-do-Mundo-2022\API-Copa-do-Mundo-2022.csproj", "{38E81806-7D6F-497A-AB5D-C7D793388558}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API-Copa-do-Mundo-2022", "Desafio-Copa-do-Mundo-2022\API-Copa-do-Mundo-2022.csproj", "{38E81806-7D6F-497A-AB5D-C7D793388558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Front", "Front\Front.csproj", "{61132042-E857-4B3C-89D8-3BA129D4786E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{38E81806-7D6F-497A-AB5D-C7D793388558}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38E81806-7D6F-497A-AB5D-C7D793388558}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38E81806-7D6F-497A-AB5D-C7D793388558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61132042-E857-4B3C-89D8-3BA129D4786E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61132042-E857-4B3C-89D8-3BA129D4786E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61132042-E857-4B3C-89D8-3BA129D4786E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61132042-E857-4B3C-89D8-3BA129D4786E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
