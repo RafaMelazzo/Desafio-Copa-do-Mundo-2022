@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_Copa_do_Mundo_2022.Models
@@ -30,5 +31,8 @@ namespace API_Copa_do_Mundo_2022.Models
         [ForeignKey("Grupo")]
         public int GruposId { get; set; }
         public virtual Grupo Grupo { get; set; }
+
+        public ICollection<PartidaClube> PartidasClubesA { get; set; }
+        public ICollection<PartidaClube> PartidasClubesB { get; set; }
     }
 }
