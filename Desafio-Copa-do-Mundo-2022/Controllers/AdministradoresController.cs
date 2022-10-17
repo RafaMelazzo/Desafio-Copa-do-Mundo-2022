@@ -3,13 +3,14 @@ using API_Copa_do_Mundo_2022.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace API_Copa_do_Mundo_2022.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdministradoresController : ControllerBase
+    public class AdministradoresController : ControllerBase, IAdministradoresController
     {
         private DbContexto db;
         public AdministradoresController(DbContexto _db)
