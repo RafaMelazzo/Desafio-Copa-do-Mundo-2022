@@ -201,6 +201,14 @@ namespace API_Copa_do_Mundo_2022.Migrations
                         .HasColumnType("tinyint unsigned")
                         .HasColumnName("finalizado");
 
+                    b.Property<short?>("GolsClubeA")
+                        .HasColumnType("smallint")
+                        .HasColumnName("gols_clube_a");
+
+                    b.Property<short?>("GolsClubeB")
+                        .HasColumnType("smallint")
+                        .HasColumnName("gols_clube_b");
+
                     b.Property<byte?>("Iniciado")
                         .HasColumnType("tinyint unsigned")
                         .HasColumnName("iniciado");

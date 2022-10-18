@@ -14,6 +14,6 @@ namespace API_Copa_do_Mundo_2022.Models
         [Required]
         [Column(name: "nome")]
         [MaxLength(1)]
-        public string Nome { get; set; }
+        public char Nome { get; set; }
     }
 }

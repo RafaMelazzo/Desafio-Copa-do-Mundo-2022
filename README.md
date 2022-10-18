@@ -10,12 +10,12 @@
 
 ### Como Instalar
 #### Configurando o Banco de Dados
-1. Configure a strig de conexão no arquivo ***appsettings.json***, na linha 11. Exemplo:
+1. Configure a string de conexão no arquivo ***appsettings.json***, na linha 11. Exemplo:
 
-  `Server=localhost;Database=copa_do_mundo_2022;Uid=<USUÁRIO>;Password=<SENHA>;`
+  `Server=127.0.0.1;Database=copa_do_mundo_2022;Uid=<USUÁRIO>;Password=<SENHA>;`
 
 2. Execute os seguintes comandos no projeto:
-```
-1. dotnet ef migrations add InitialCreate
+```shell
+1. dotnet ef migrations add NovoBanco
 2. dotnet ef database update
 ```

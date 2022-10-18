@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Clubes";
+}
+
+    <h1 class="display-4 text-center">@ViewData["Title"]</h1>
+<table class="table table-striped table-hover table-responsive table-light">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" width="60">Flag</th>
+            <th scope="col">País</th>
+            <th scope="col">Grupo</th>
+        </tr>
+    </thead>
+    <tbody id="clubes_rows" class="table-group-divider">
+        <tr>
+            <td class="text-center" scope="row" colspan="4">Carregando...</td>
+        </tr>
+    </tbody>
+</table>
+<script type="text/javascript">
+    const API_HOST = "https://localhost:44308/api/";
+
+    //var cadastrar = async (event) => {
+    //    event.preventDefault();
+
+    //    let clube = {
+    //        nome: document.getElementById("nome").value,
+    //        telefone: document.getElementById("telefone").value,
+    //    };
+
+    //    const settings = {
+    //        method: 'POST',
+    //        headers: {
+    //            Accept: 'application/json',
+    //            'Content-Type': 'application/json',
+    //        },
+    //        body: JSON.stringify(clube)
+    //    };
+    //    try {
+    //        const fetchClubes = await fetch(`${API_HOST}Clubes`, settings);
+    //        await fetchClubes.json();
+
+    //        document.getElementById("nome").value = "";
+    //        document.getElementById("telefone").value = ""
+
+    //        carregarClubes();
+    //    } catch (e) {
+    //        console.log(e);
+    //    }
+    //}
+
+    var carregarClubes = async () => {
+        const settings = {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            }
+        };
+        try {
+            const fetchClubes = await fetch(`${API_HOST}Clubes`, settings);
+            const clubes = await fetchClubes.json();
+            const fetchGrupos = await fetch(`${API_HOST}Grupos`, settings);
+            const grupos = await fetchGrupos.json();
+            let grupoId = "";
+            let html = "";
+            clubes.forEach(clube => {
+                grupoId = `${clube.gruposId}` - 1;
+                html += `
+            <tr>
+                <td scope="row">${clube.id}</td>
+                <td><img src="${clube.urlBandeira}" alt="Bandeira ${clube.nome}" width="40px" /></td>
+                <td>${clube.nome}</td>
+                <td>Grupo ${grupos[grupoId].nome}</td>
+            </tr>`
+            });
+
+            document.getElementById("clubes_rows").innerHTML = html;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    carregarClubes();
+</script>

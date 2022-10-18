@@ -57,6 +57,8 @@ namespace API_Copa_do_Mundo_2022.Controllers
             partidaDb.DataHora = partida.DataHora;
             partidaDb.Iniciado = partida.Iniciado;
             partidaDb.Finalizado = partida.Finalizado;
+            partidaDb.GolsClubeA = partida.GolsClubeA;
+            partidaDb.GolsClubeB = partida.GolsClubeB;
 
             db.Partidas.Update(partidaDb);
             db.SaveChanges();

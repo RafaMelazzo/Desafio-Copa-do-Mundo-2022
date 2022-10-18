@@ -29,6 +29,12 @@ namespace API_Copa_do_Mundo_2022.Models
 
         [Column(name: "finalizado")]
         public byte? Finalizado { get; set; }
+
+        [Column(name: "gols_clube_a")]
+        public Int16? GolsClubeA { get; set; }
+
+        [Column(name: "gols_clube_b")]
+        public Int16? GolsClubeB { get; set; }
         public ICollection<PartidaClube> PartidasClubes { get; set; }
 
     }
