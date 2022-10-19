@@ -24,7 +24,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    const API_HOST = "https://localhost:44308/api/";
+    const API_HOST = "https://localhost:5001/api/";
 
     //var cadastrar = async (event) => {
     //    event.preventDefault();
@@ -68,16 +68,16 @@
             const clubes = await fetchClubes.json();
             const fetchGrupos = await fetch(`${API_HOST}Grupos`, settings);
             const grupos = await fetchGrupos.json();
-            let grupoId = "";
+            let grupo = "";
             let html = "";
             clubes.forEach(clube => {
-                grupoId = `${clube.gruposId}` - 1;
+                grupo = grupos.find(g => g.id === clube.gruposId);
                 html += `
             <tr>
                 <td scope="row">${clube.id}</td>
                 <td><img src="${clube.urlBandeira}" alt="Bandeira ${clube.nome}" width="40px" /></td>
                 <td>${clube.nome}</td>
-                <td>Grupo ${grupos[grupoId].nome}</td>
+                <td>Grupo ${grupo.nome}</td>
                 <td>editar | excluir</td>
             </tr>`
             });
