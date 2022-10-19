@@ -10,7 +10,7 @@ namespace API_Copa_do_Mundo_2022.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdministradoresController : ControllerBase, IAdministradoresController
+    public class AdministradoresController : ControllerBase
     {
         private DbContexto db;
         public AdministradoresController(DbContexto _db)
