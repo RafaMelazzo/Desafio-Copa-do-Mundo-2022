@@ -1,22 +1,11 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+COPY . ./
+RUN dotnet restore
+RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ["Desafio-Copa-do-Mundo-2022/Desafio-Copa-do-Mundo-2022.csproj", "Desafio-Copa-do-Mundo-2022/"]
-RUN dotnet restore "Desafio-Copa-do-Mundo-2022/Desafio-Copa-do-Mundo-2022.csproj"
-COPY . .
-WORKDIR "/src/Desafio-Copa-do-Mundo-2022"
-RUN dotnet build "Desafio-Copa-do-Mundo-2022.csproj" -c Release -o /app/build
 
-FROM build AS publish
-RUN dotnet publish "Desafio-Copa-do-Mundo-2022.csproj" -c Release -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Desafio-Copa-do-Mundo-2022.dll"]
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "API-Copa-do-Mundo-2022.dll"]
