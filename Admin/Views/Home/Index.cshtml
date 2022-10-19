@@ -1,8 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "_LayoutHome";
+    ViewData["Title"] = "Login";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-5">
+    <h1 class="display-5">Desafio Copa do Mundo 2022</h1>
+    <p class="display-6">Bem vindo!</p>
+    <p>Faça seu login para entrar no sistema de administração.</p>
+</div>
+<div class="row justify-content-center">
+    <div class="col-4">
+        <form>
+            <div class="text-center mb-3">
+                <img src="~/img/logo-tiamat.webp" class="logo-tiamat" />
+            </div>
+            <div class="mb-3">
+                <label for="loginEmail" class="form-label">E-mail</label>
+                <input type="email" placeholder="nome@exemplo.com.br" class="form-control" id="loginEmail">
+            </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="loginPassword">
+            </div>
+            <div class="d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </div>
+        </form>
+    </div>
 </div>

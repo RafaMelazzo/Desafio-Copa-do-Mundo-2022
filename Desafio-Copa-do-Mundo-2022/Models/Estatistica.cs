@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 
 namespace API_Copa_do_Mundo_2022.Models
 {
@@ -16,12 +17,14 @@ namespace API_Copa_do_Mundo_2022.Models
         [Column(name: "partidas_id")]
         [ForeignKey("Partida")]
         public int PartidaId { get; set; }
+        [JsonIgnore]
         public virtual Partida Partida { get; set; }
 
         [Required]
         [Column(name: "clubes_id")]
         [ForeignKey("Clube")]
         public int ClubesId { get; set; }
+        [JsonIgnore]
         public virtual Clube Clube { get; set; }
 
         [Column(name: "chutes")]

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 
 namespace API_Copa_do_Mundo_2022.Models
 {
@@ -18,6 +19,7 @@ namespace API_Copa_do_Mundo_2022.Models
         [Column(name: "fases_id")]
         [ForeignKey("Fase")]
         public int FasesId { get; set; }
+        [JsonIgnore]
         public virtual Fase Fase { get; set; }
 
         [Required]
@@ -35,6 +37,7 @@ namespace API_Copa_do_Mundo_2022.Models
 
         [Column(name: "gols_clube_b")]
         public Int16? GolsClubeB { get; set; }
+        [JsonIgnore]
         public ICollection<PartidaClube> PartidasClubes { get; set; }
 
     }

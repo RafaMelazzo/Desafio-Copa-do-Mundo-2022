@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace API_Copa_do_Mundo_2022.Models
 {
@@ -30,9 +31,12 @@ namespace API_Copa_do_Mundo_2022.Models
         [Column(name: "grupos_id")]
         [ForeignKey("Grupo")]
         public int GruposId { get; set; }
+        [JsonIgnore]
         public virtual Grupo Grupo { get; set; }
 
+        [JsonIgnore]
         public ICollection<PartidaClube> PartidasClubesA { get; set; }
+        [JsonIgnore]
         public ICollection<PartidaClube> PartidasClubesB { get; set; }
     }
 }
