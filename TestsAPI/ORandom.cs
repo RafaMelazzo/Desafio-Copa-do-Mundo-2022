@@ -8,9 +8,9 @@ namespace TestsAPI
 {
     public class ORandom
     {
-        public ORandom()
+        public int random()
         {
-            return (new Random().Next(1, 20));
+            return new Random().Next(1, 20);
         }
     }
 }

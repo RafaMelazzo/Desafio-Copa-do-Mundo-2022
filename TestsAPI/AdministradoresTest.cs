@@ -17,9 +17,10 @@ namespace TestsAPI
         }
 
         [Fact]
-        public async Task GetTest(ORandom random)
+        public async Task GetOneTest()
         {
-            int id = random();
+            var random = new ORandom();
+            int id = random.random();
             var http = new HttpClient();
             var adm = await http.GetAsync("https://localhost:49159/api/Administradores/{id}");
             Assert.Equal(HttpStatusCode.OK, adm.StatusCode);
@@ -42,9 +43,10 @@ namespace TestsAPI
         }*/
 
         [Fact]
-        public async Task DeleteTest(ORandom random)
+        public async Task DeleteTest()
         {
-            int id = random();
+            var random = new ORandom();
+            int id = random.random();
             var http = new HttpClient();
             var adm = await http.DeleteAsync("https://localhost:49159/api/Administradores/{id}");
             Assert.Equal(HttpStatusCode.OK, adm.StatusCode);
