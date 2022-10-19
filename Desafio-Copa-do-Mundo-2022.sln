@@ -5,7 +5,15 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API-Copa-do-Mundo-2022", "Desafio-Copa-do-Mundo-2022\API-Copa-do-Mundo-2022.csproj", "{38E81806-7D6F-497A-AB5D-C7D793388558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Front", "Front\Front.csproj", "{61132042-E857-4B3C-89D8-3BA129D4786E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Front", "Front\Front.csproj", "{61132042-E857-4B3C-89D8-3BA129D4786E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{38E81806-7D6F-497A-AB5D-C7D793388558} = {38E81806-7D6F-497A-AB5D-C7D793388558}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin", "Admin\Admin.csproj", "{2480CA76-80D0-41EC-97A0-B7491A0E98B3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{38E81806-7D6F-497A-AB5D-C7D793388558} = {38E81806-7D6F-497A-AB5D-C7D793388558}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
