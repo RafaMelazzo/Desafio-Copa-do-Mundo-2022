@@ -66,7 +66,9 @@
 <br>
 <br>
 <br>
-![trelo-kanban](https://user-images.githubusercontent.com/72822204/197008326-935cd856-ecc8-420d-8d3a-cd80fb1f93c7.jpg)
+![trelo-kanban](https://user-images.githubusercontent.com/72822204/197009823-75720304-c5b5-464c-a006-2c1b1c857993.jpg)
+<p align="center">
+</p>
 <br>
 <br>
 <br>
@@ -87,7 +89,7 @@
   
   
   <h2>🎁 Agradecimentos </h2>
-  <h4>Agradecemos à IBM pela oportunidade de participarmos desta bela iniciativa que é o programa de treinamento If Black, Then Code, voltado para estudantes pretos(as) e pardos(as), que proporciona a ampliação de conhecimentos e de qualificação na área de desenvolvimento Back End e DevOps (Java).
+  <h4>Agradecemos à Stone pela oportunidade de participarmos desta bela iniciativa que é o programa de treinamento Stone Tech <PcD/> voltado para pessoas com deficiência, que proporciona a ampliação de conhecimentos e de qualificação na área de desenvolvimento Back End e DevOps (C#/DotNet).
       
   <h4>
 ------------
