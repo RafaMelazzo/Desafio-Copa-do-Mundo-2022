@@ -23,6 +23,30 @@ namespace API_Copa_do_Mundo_2022.Controllers
             return StatusCode(200, db.Grupos.ToList());
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public ActionResult Get(int id)
+        {
+            if (id < 1)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Grupo não encontrado, id precisa ser maior que 0"
+                });
+            }
+
+            var grupoDb = db.Grupos.Find(id);
+            if (grupoDb == null)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Grupo não encontrado, id não existe no banco de dados"
+                });
+            }
+
+            return StatusCode(200, grupoDb);
+        }
+
         [HttpPost]
         public ActionResult Post([FromBody] Grupo grupo)
         {

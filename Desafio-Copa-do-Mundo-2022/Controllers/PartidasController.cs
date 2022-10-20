@@ -23,6 +23,30 @@ namespace API_Copa_do_Mundo_2022.Controllers
             return StatusCode(200, db.Partidas.ToList());
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public ActionResult Get(int id)
+        {
+            if (id < 1)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Partida não encontrado, id precisa ser maior que 0"
+                });
+            }
+
+            var partidaDb = db.Partidas.Find(id);
+            if (partidaDb == null)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Partida não encontrado, id não existe no banco de dados"
+                });
+            }
+
+            return StatusCode(200, partidaDb);
+        }
+
         [HttpPost]
         public ActionResult Post([FromBody] Partida partida)
         {
