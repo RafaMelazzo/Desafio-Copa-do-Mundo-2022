@@ -66,7 +66,7 @@
 <br>
 <br>
 <br>
-![trelo-kanban](https://user-images.githubusercontent.com/72822204/197009823-75720304-c5b5-464c-a006-2c1b1c857993.jpg)
+ <img src="https://user-images.githubusercontent.com/72822204/197009823-75720304-c5b5-464c-a006-2c1b1c857993.jpg" />
 <p align="center">
 </p>
 <br>
@@ -76,22 +76,21 @@
 <br>
 <br>
 <br>
-![DiagramaBD](https://user-images.githubusercontent.com/72822204/197009267-af1743a6-f7c7-4c1f-a937-86abe1cfdfce.jpg)
+    <img src="https://user-images.githubusercontent.com/72822204/197009267-af1743a6-f7c7-4c1f-a937-86abe1cfdfce.jpg" />
+<p align="center">
+</p>
 <br>
 <br>
  
   
  * ✔️ CADASTRO, LISTAGEM, ATUALIZAR E DELETAR.
   <br>
-![telaCadastroClubesAbasEdit](https://user-images.githubusercontent.com/72822204/197009047-a399d4b7-b45d-4f44-89e8-483908a48764.jpg)
+     <img src="https://user-images.githubusercontent.com/72822204/197009047-a399d4b7-b45d-4f44-89e8-483908a48764.jpg" />
+<p align="center">
+</p>
 <br>
 <br> 
-  
-  
-  <h2>🎁 Agradecimentos </h2>
-  <h4>Agradecemos à Stone pela oportunidade de participarmos desta bela iniciativa que é o programa de treinamento Stone Tech <PcD/> voltado para pessoas com deficiência, que proporciona a ampliação de conhecimentos e de qualificação na área de desenvolvimento Back End e DevOps (C#/DotNet).
-      
-  <h4>
+    
 ------------
 
 ### Como Instalar
@@ -104,4 +103,10 @@
 ```shell
 1. dotnet ef migrations add NovoBanco
 2. dotnet ef database update
-```
+```    
+  
+  
+  <h2>Agradecimentos </h2>
+  <h4>Agradecemos à Stone pela oportunidade de participarmos desta bela iniciativa que é o programa de treinamento Stone Tech <PcD/> voltado para pessoas com deficiência, que proporciona a ampliação de conhecimentos e de qualificação na área de desenvolvimento Back End e DevOps (C#/DotNet).
+      
+  <h4>
