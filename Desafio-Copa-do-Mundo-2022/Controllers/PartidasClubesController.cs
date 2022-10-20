@@ -23,6 +23,30 @@ namespace API_Copa_do_Mundo_2022.Controllers
             return StatusCode(200, db.PartidasClubes.ToList());
         }
 
+        [HttpGet]
+        [Route("{partidaId}")]
+        public ActionResult Get(int partidaId)
+        {
+            if (partidaId < 1)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Partida de Clubes não encontrado, id precisa ser maior que 0"
+                });
+            }
+
+            var partidaClubeDb = db.PartidasClubes.Find(partidaId);
+            if (partidaClubeDb == null)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Partida de Clubes não encontrado, id não existe no banco de dados"
+                });
+            }
+
+            return StatusCode(200, partidaClubeDb);
+        }
+
         [HttpPost]
         public ActionResult Post([FromBody] PartidaClube partidaClube)
         {
@@ -40,7 +64,7 @@ namespace API_Copa_do_Mundo_2022.Controllers
             {
                 return StatusCode(404, new
                 {
-                    Mensagem = "Partida de Clube não encontrado, id precisa ser maior que 0"
+                    Mensagem = "Partida de Clubes não encontrado, id precisa ser maior que 0"
                 });
             }
 
@@ -49,7 +73,7 @@ namespace API_Copa_do_Mundo_2022.Controllers
             {
                 return StatusCode(404, new
                 {
-                    Mensagem = "Partida de Clube não encontrado, id não existe no banco de dados"
+                    Mensagem = "Partida de Clubes não encontrado, id não existe no banco de dados"
                 });
             }
 
@@ -71,7 +95,7 @@ namespace API_Copa_do_Mundo_2022.Controllers
             {
                 return StatusCode(404, new
                 {
-                    Mensagem = "Partida de Clube não encontrado, id precisa ser maior que 0"
+                    Mensagem = "Partida de Clubes não encontrado, id precisa ser maior que 0"
                 });
             }
 
@@ -80,7 +104,7 @@ namespace API_Copa_do_Mundo_2022.Controllers
             {
                 return StatusCode(404, new
                 {
-                    Mensagem = "Partida de Clube não encontrado, id não existe no banco de dados"
+                    Mensagem = "Partida de Clubes não encontrado, id não existe no banco de dados"
                 });
             }
 

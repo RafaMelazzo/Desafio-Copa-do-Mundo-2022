@@ -23,6 +23,30 @@ namespace API_Copa_do_Mundo_2022.Controllers
             return StatusCode(200, db.Estatisticas.ToList());
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public ActionResult Get(int id)
+        {
+            if (id < 1)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Estatistica não encontrado, id precisa ser maior que 0"
+                });
+            }
+
+            var estatisticaDb = db.Estatisticas.Find(id);
+            if (estatisticaDb == null)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Estatistica não encontrado, id não existe no banco de dados"
+                });
+            }
+
+            return StatusCode(200, estatisticaDb);
+        }
+
         [HttpPost]
         public ActionResult Post([FromBody] Estatistica estatistica)
         {

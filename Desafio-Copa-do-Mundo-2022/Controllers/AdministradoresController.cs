@@ -23,6 +23,30 @@ namespace API_Copa_do_Mundo_2022.Controllers
             return StatusCode(200, db.Administradores.ToList());
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public ActionResult Get(int id)
+        {
+            if (id < 1)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Administrador não encontrado, id precisa ser maior que 0"
+                });
+            }
+
+            var administradorDb = db.Administradores.Find(id);
+            if (administradorDb == null)
+            {
+                return StatusCode(404, new
+                {
+                    Mensagem = "Administrador não encontrado, id não existe no banco de dados"
+                });
+            }
+
+            return StatusCode(200, administradorDb);
+        }
+
         [HttpPost]
         public ActionResult Post([FromBody] Administrador administrador)
         {
