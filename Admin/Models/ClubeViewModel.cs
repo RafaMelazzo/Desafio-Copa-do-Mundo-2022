@@ -2,9 +2,10 @@
 {
     public class ClubeViewModel
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string UrlBandeira { get; set; }
-        public int GruposId { get; set; }
+        public int id { get; set; }
+        public string nome { get; set; }
+        public string descricao { get; set; }
+        public string urlBandeira { get; set; }
+        public int gruposId { get; set; }
     }
 }

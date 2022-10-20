@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Admin.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+using System.Collections.Generic;
+using System.Net;
 
 namespace Admin.Controllers
 {
@@ -11,6 +17,17 @@ namespace Admin.Controllers
 
         public IActionResult Clubes()
         {
+            string clubesUrl = new WebClient().DownloadString("https://localhost:5001/api/Clubes");
+            string ClubesJson = System.IO.File.ReadAllText(clubesUrl);
+            JArray parseClubes = JArray.Parse(ClubesJson);
+            ViewData["ClubeViewModel"] = parseClubes;
+            return View();
+
+            //return View(parseClubes);
+
+            //var clubesDeserialized = JsonConvert.DeserializeObject<ClubesJson>((string)parseClubes);
+            //return View(clubesDeserialized.clubes);
+
             //IEnumerable<ClubeViewModel> clubes = null;
 
             //using (var client = new HttpClient())
@@ -37,7 +54,7 @@ namespace Admin.Controllers
             //        ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
             //    }
             //}
-            return View();
+            //return View();
         }
     }
 }
