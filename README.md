@@ -23,6 +23,12 @@
 <p align="center">Nossa aplicação é uma plataforma para acompanhar as partidas e fases da Copa do Mundo de 2022.</p>
 
 <br>
+
+<h2>Apresentação</h2>
+    <a href="https://youtu.be/LgT_uRoAqsw" target="_blank">
+        <img src="https://user-images.githubusercontent.com/21060123/197223278-4983be71-ac63-442b-9255-259bb6af76b1.jpg" />
+    </a>
+
 <h2>👨🏻‍💻 Sobre o projeto</h2> 
 <p>Nós recebemos o desafio para construir uma API, onde o sistema deve permitir o cadastro de novos Clubes, Partidas, Fases e Estatísticas.</p>
 <br>
